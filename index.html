@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roma Map & Music - Interactive Experience</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -52,32 +52,17 @@
             </div>
         </section>
 
-        <section id="map" class="map-section">
-            <div class="container">
-                <h2 class="section-title">
-                    <i class="fas fa-map"></i>
-                    Interactive Map of Roma
-                </h2>
-                <div class="map-container">
-                    <div id="map-canvas"></div>
-                    <div class="map-controls">
-                        <button class="map-btn" onclick="centerOnRome()">
-                            <i class="fas fa-home"></i>
-                            Center on Roma
-                        </button>
-                        <button class="map-btn" onclick="toggleSatellite()">
-                            <i class="fas fa-satellite"></i>
-                            Satellite View
-                        </button>
-                        <a class="map-btn" href="mappa/" title="Open linked map folder">
-                            <i class="fas fa-folder-open"></i>
-                            Open Map Folder
-                        </a>
-                    </div>
-                </div>
+        <!-- Interactive Map of Roma -->
+        <section id="map" class="py-20 bg-gray-900 text-white">
+          <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Interactive Map of Roma</h2>
+            <div class="map-container rounded-lg shadow-lg overflow-hidden" style="height: 600px; border: 1px solid #374151;">
+              <iframe src="https://xtruel.github.io/mappa-roma/" style="width: 100%; height: 100%; border: none;"></iframe>
             </div>
+          </div>
         </section>
 
+        <!-- Roma Sounds -->
         <section id="musica" class="music-section">
             <div class="container">
                 <h2 class="section-title">
@@ -183,7 +168,7 @@
         </div>
     </footer>
 
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
