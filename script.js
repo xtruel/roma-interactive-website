@@ -1,14 +1,14 @@
 // Mapbox implementation for Rome landmarks
-console.log('🗺️ Script loaded - starting Mapbox initialization...');
-console.log('🌐 Current URL:', window.location.href);
-console.log('📁 Script version: 20250105');
+console.log('Script loaded - starting Mapbox initialization...');
+console.log('Current URL:', window.location.href);
+console.log('Script version: 20250105');
 
 let map;
 let initialized = false;
 
 // Set Mapbox access token - using the working token
 mapboxgl.accessToken = 'pk.eyJ1IjoiZnVyaWVyb21hbmUiLCJhIjoiY21laW95N3B1MDRqajJycXZsNndraHlxNCJ9.Y5TZYShOj9thgJtQE3EVKA';
-console.log('🔑 Mapbox token set:', mapboxgl.accessToken.substring(0, 20) + '...');
+console.log('Mapbox token set:', mapboxgl.accessToken.substring(0, 20) + '...');
 
 // Rome landmarks data
 const romaLandmarks = [
@@ -60,37 +60,37 @@ const romaLandmarks = [
 ];
 
 function initMap() {
-    console.log('🗺️ Starting Mapbox initialization...');
+    console.log('Starting Mapbox initialization...');
     
     // Find map container - support both 'map' and 'map-widget'
     const mapContainer = document.getElementById('map') || document.getElementById('map-widget');
     if (!mapContainer) {
-        console.error('❌ Map container not found! Looking for "map" or "map-widget"');
+        console.error('Map container not found! Looking for "map" or "map-widget"');
         return;
     }
 
-    console.log('✅ Map container found:', mapContainer.id);
+    console.log('Map container found:', mapContainer.id);
 
     if (initialized) {
-        console.log('✅ Map already initialized');
+        console.log('Map already initialized');
         return;
     }
 
     if (typeof mapboxgl === 'undefined') {
-        console.error('❌ Mapbox GL JS not loaded!');
+        console.error('Mapbox GL JS not loaded!');
         setTimeout(initMap, 1000);
         return;
     }
 
     // Ensure container has proper dimensions
     if (mapContainer.offsetHeight < 100) {
-        console.log('⚠️ Container height too small, waiting for layout...');
+        console.log('Container height too small, waiting for layout...');
         setTimeout(initMap, 500);
         return;
     }
 
     try {
-        console.log('🚀 Creating Mapbox map instance...');
+        console.log('Creating Mapbox map instance...');
         console.log('Container dimensions:', mapContainer.offsetWidth, 'x', mapContainer.offsetHeight);
 
         // Initialize Mapbox map
@@ -102,12 +102,12 @@ function initMap() {
         });
 
         map.on('error', (e) => {
-            console.error('❌ Mapbox error:', e);
+            console.error('Mapbox error:', e);
             showMapError(mapContainer);
         });
 
         map.on('load', function() {
-            console.log('✅ Mapbox map fully loaded!');
+            console.log('Mapbox map fully loaded!');
             
             // Remove loading state but keep the map
             const loadingElement = mapContainer.querySelector('.map-loading');
@@ -127,16 +127,16 @@ function initMap() {
         });
         
     } catch (error) {
-        console.error('❌ Failed to initialize Mapbox:', error);
+        console.error('Failed to initialize Mapbox:', error);
         showMapError(mapContainer);
     }
 }
 
 function addRomaLandmarks() {
-    console.log('📍 Adding Rome landmarks...');
+    console.log('Adding Rome landmarks...');
     
     if (!map) {
-        console.error('❌ Map not initialized, cannot add landmarks');
+        console.error('Map not initialized, cannot add landmarks');
         return;
     }
     
@@ -145,7 +145,7 @@ function addRomaLandmarks() {
             const markerElement = document.createElement('div');
             markerElement.className = 'custom-marker';
             markerElement.style.cssText = `
-                background-color: #e11d48;
+                background-color: #DC143C;
                 width: 24px;
                 height: 24px;
                 border-radius: 50%;
@@ -169,7 +169,7 @@ function addRomaLandmarks() {
                 maxWidth: '300px'
             }).setHTML(`
                 <div style="padding: 15px; font-family: Arial, sans-serif;">
-                    <h3 style="margin: 0 0 10px 0; color: #e11d48; font-size: 18px; font-weight: bold;">${landmark.name}</h3>
+                    <h3 style="margin: 0 0 10px 0; color: #DC143C; font-size: 18px; font-weight: bold;">${landmark.name}</h3>
                     <p style="margin: 0; color: #333; font-size: 14px; line-height: 1.5;">${landmark.description}</p>
                 </div>
             `);
@@ -179,10 +179,10 @@ function addRomaLandmarks() {
                 .setPopup(popup)
                 .addTo(map);
             
-            console.log(`✅ Added marker for ${landmark.name}`);
+            console.log(`Added marker for ${landmark.name}`);
             
         } catch (error) {
-            console.error(`❌ Failed to add marker for ${landmark.name}:`, error);
+            console.error(`Failed to add marker for ${landmark.name}:`, error);
         }
     });
 }
@@ -212,30 +212,102 @@ function showMapError(container) {
 }
 
 function attemptMapInit() {
-    console.log('🔄 Attempting map initialization...');
+    console.log('Attempting map initialization...');
     
     const mapContainer = document.getElementById('map') || document.getElementById('map-widget');
     if (mapContainer && typeof mapboxgl !== 'undefined') {
         initMap();
     } else {
-        console.log('⏳ Waiting for DOM/Mapbox to be ready...');
+        console.log('Waiting for DOM/Mapbox to be ready...');
         setTimeout(attemptMapInit, 500);
     }
 }
 
+// Sidebar functionality
+console.log('Initializing sidebar functionality...');
+
+function initSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+    
+    if (!sidebar || !sidebarToggle || !sidebarOverlay) {
+        console.log('Sidebar elements not found, retrying...');
+        setTimeout(initSidebar, 100);
+        return;
+    }
+    
+    console.log('Sidebar elements found, setting up event listeners...');
+    
+    // Toggle sidebar
+    sidebarToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+        sidebarOverlay.classList.toggle('open');
+        document.body.classList.toggle('sidebar-open');
+        console.log('Sidebar toggled');
+    });
+    
+    // Close sidebar when clicking overlay
+    sidebarOverlay.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+        sidebarOverlay.classList.remove('open');
+        document.body.classList.remove('sidebar-open');
+        console.log('Sidebar closed via overlay');
+    });
+    
+    // Close sidebar when pressing Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && sidebar.classList.contains('open')) {
+            sidebar.classList.remove('open');
+            sidebarOverlay.classList.remove('open');
+            document.body.classList.remove('sidebar-open');
+            console.log('Sidebar closed via Escape key');
+        }
+    });
+    
+    // Handle sidebar navigation item clicks
+    const sidebarNavItems = sidebar.querySelectorAll('.sidebar-nav-item');
+    sidebarNavItems.forEach(item => {
+        item.addEventListener('click', () => {
+            // Remove active class from all items
+            sidebarNavItems.forEach(navItem => navItem.classList.remove('active'));
+            // Add active class to clicked item
+            item.classList.add('active');
+            
+            // Close sidebar on mobile after navigation
+            if (window.innerWidth <= 768) {
+                sidebar.classList.remove('open');
+                sidebarOverlay.classList.remove('open');
+                document.body.classList.remove('sidebar-open');
+            }
+        });
+    });
+    
+    console.log('Sidebar functionality initialized');
+}
+
 // Initialize when DOM is ready
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', attemptMapInit);
+    document.addEventListener('DOMContentLoaded', () => {
+        attemptMapInit();
+        initSidebar();
+    });
 } else {
     attemptMapInit();
+    initSidebar();
 }
 
 // Fallback initialization on window load
 window.addEventListener('load', () => {
     if (!initialized) {
-        console.log('🔄 Fallback initialization on window load');
+        console.log('Fallback initialization on window load');
         setTimeout(attemptMapInit, 1000);
+    }
+    
+    if (!document.getElementById('sidebar')) {
+        console.log('Fallback sidebar initialization on window load');
+        setTimeout(initSidebar, 1000);
     }
 });
 
-console.log('📋 Script loaded. Mapbox GL available:', typeof mapboxgl !== 'undefined');
+console.log('Script loaded. Mapbox GL available:', typeof mapboxgl !== 'undefined');

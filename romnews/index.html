@@ -3,272 +3,156 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RomaNews - Ovunque Romanisti</title>
-  <meta name="description" content="La tua destinazione definitiva per notizie, eventi e contenuti esclusivi sui Romanisti">
-  <link rel="canonical" href="https://www.ovunqueromanisti.it/romnews/">
-  
-  <!-- Mapbox CSS and JS -->
-  <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css">
-  <script defer src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
-  
+  <title>ROMNEWS · Home</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20250103">
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="../styles.css?v=20250105">
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.ovunqueromanisti.it/romnews/">
+  <!-- Mapbox GL CSS/JS -->
+  <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css">
+  <script defer src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
   <script defer src="../script.js?v=20250105"></script>
 </head>
 <body>
+  <!-- Sidebar Toggle Button -->
+  <button class="sidebar-toggle" id="sidebarToggle">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <!-- Sidebar Overlay -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f7/AS_Roma_logo_%282017%29.svg/1200px-AS_Roma_logo_%282017%29.svg.png" alt="AS Roma Logo" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><circle cx=\'50\' cy=\'50\' r=\'45\' fill=\'%23DC143C\' stroke=\'%23FFD700\' stroke-width=\'3\'/><text x=\'50\' y=\'60\' text-anchor=\'middle\' fill=\'%23FFD700\' font-size=\'40\' font-weight=\'bold\'>R</text></svg>'">
+      </div>
+      <h2 class="sidebar-title">FORZA ROMA</h2>
+      <p class="sidebar-subtitle">Ovunque Romanisti</p>
+    </div>
+    
+    <nav class="sidebar-nav">
+      <a href="../" class="sidebar-nav-item">
+        <i class="fas fa-home"></i>
+        Home
+      </a>
+      <a href="index.html" class="sidebar-nav-item active">
+        <i class="fas fa-newspaper"></i>
+        ROMNEWS
+      </a>
+      <a href="news.html" class="sidebar-nav-item">
+        <i class="fas fa-rss"></i>
+        News
+      </a>
+      <a href="eventi.html" class="sidebar-nav-item">
+        <i class="fas fa-calendar-alt"></i>
+        Eventi
+      </a>
+      <a href="video.html" class="sidebar-nav-item">
+        <i class="fas fa-play-circle"></i>
+        Video
+      </a>
+      <a href="mappa.html" class="sidebar-nav-item">
+        <i class="fas fa-map-marked-alt"></i>
+        Mappa
+      </a>
+    </nav>
+  </aside>
+
   <!-- Header -->
   <header class="site-header">
-    <div class="header-inner">
-      <div class="brand">
-        <div class="brand-icon">
-          <i class="fas fa-shield-alt"></i>
-        </div>
-        <span class="brand-text">RomaNews</span>
-      </div>
-      
-      <nav class="nav">
-        <a href="/" class="nav-link">Home</a>
-        <a href="/romnews/" class="nav-link active">News</a>
-        <a href="/romnews/eventi.html" class="nav-link">Eventi</a>
-        <a href="/romnews/video.html" class="nav-link">Video</a>
-        <a href="/romnews/mappa.html" class="nav-link">Mappa</a>
-      </nav>
-      
-      <div class="search-icon">
-        <i class="fas fa-search"></i>
+    <div class="container">
+      <div class="header-inner">
+        <div class="brand">ROMNEWS</div>
+        <nav class="nav">
+          <a href="index.html" class="active">Home</a>
+          <a href="news.html">News</a>
+          <a href="eventi.html">Eventi</a>
+          <a href="video.html">Video</a>
+          <a href="mappa.html">Mappa</a>
+        </nav>
       </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1 class="hero-title">FORZA ROMA</h1>
-      <p class="hero-subtitle">La tua destinazione definitiva per notizie, eventi e contenuti esclusivi sui Romanisti</p>
-      <div class="hero-actions">
-        <a href="/romnews/" class="btn btn-primary">Ultime Notizie</a>
-        <a href="/romnews/video.html" class="btn btn-secondary">Guarda Video</a>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>Benvenuto su ROMNEWS</h1>
+        <p>Notizie, eventi, video e una mappa rapida sulla Roma.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="news.html">Vai alle News</a>
+          <a class="btn btn-ghost" href="eventi.html">Prossimi Eventi</a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Breaking News Section -->
-  <section class="breaking-news">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Breaking News</h2>
-        <a href="/romnews/" class="view-all">Vedi Tutto</a>
-      </div>
-      
-      <div class="news-grid">
-        <div class="news-card">
-          <div class="news-image">
-            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=250&fit=crop" alt="Celebrazione Roma">
-          </div>
-          <div class="news-content">
-            <div class="news-tag transfer">Transfer News • 2 ore fa</div>
-            <h3 class="news-title">Nuovo Acquisto in Arrivo</h3>
-            <p class="news-description">La Roma è pronta a chiudere un importante mercato invernale con un nuovo centrocampista.</p>
-            <a href="/romnews/" class="read-more">Leggi di più →</a>
-          </div>
+    <!-- Content Sections -->
+    <section class="container">
+      <div class="grid">
+        <div class="card">
+          <h3>News</h3>
+          <p>Ultime notizie e approfondimenti.</p>
+          <a href="news.html" class="btn btn-ghost">Vai alle News</a>
         </div>
-        
-        <div class="news-card">
-          <div class="news-image">
-            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=250&fit=crop" alt="Allenamento Roma">
-          </div>
-          <div class="news-content">
-            <div class="news-tag training">Allenamento • 5 ore fa</div>
-            <h3 class="news-title">Preparazione per la Prossima Partita</h3>
-            <p class="news-description">La squadra si allena duramente in vista del prossimo impegno di campionato.</p>
-            <a href="/romnews/" class="read-more">Leggi di più →</a>
-          </div>
+        <div class="card">
+          <h3>Eventi</h3>
+          <p>Calendario match e appuntamenti.</p>
+          <a href="eventi.html" class="btn btn-ghost">Prossimi Eventi</a>
         </div>
-        
-        <div class="news-card">
-          <div class="news-image">
-            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=250&fit=crop" alt="Tifosi Roma">
-          </div>
-          <div class="news-content">
-            <div class="news-tag fan-zone">Fan Zone • 1 giorno fa</div>
-            <h3 class="news-title">I Tifosi Celebrano la Vittoria</h3>
-            <p class="news-description">Grande festa in città dopo la vittoria dell'ultima partita casalinga.</p>
-            <a href="/romnews/" class="read-more">Leggi di più →</a>
-          </div>
+        <div class="card">
+          <h3>Video</h3>
+          <p>Highlights e interviste.</p>
+          <a href="video.html" class="btn btn-ghost">Guarda i Video</a>
+        </div>
+        <div class="card">
+          <h3>Mappa</h3>
+          <p>Apri la mappa completa.</p>
+          <a href="mappa.html" class="btn btn-ghost">Apri Mappa</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Interactive Map Section -->
-  <section class="map-section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Mappa Interattiva di Roma</h2>
-        <p class="section-subtitle">Scopri i luoghi più importanti della città eterna</p>
-      </div>
-      
-      <div class="map-container">
-        <div id="map" class="mapbox-container">
+    <!-- Map Section -->
+    <section class="home-map">
+      <div class="container">
+        <h2 class="page-title">Mappa (preview)</h2>
+        <div id="map" class="mapbox-container" role="region" aria-label="Mappa Stadio Olimpico">
           <div class="map-loading">
-            <div class="loading-icon">
-              <i class="fas fa-map-marked-alt"></i>
-            </div>
-            <div class="loading-text">Caricamento Mappa...</div>
-            <div class="loading-subtext">Preparazione della mappa interattiva di Roma</div>
-          </div>
-        </div>
-        
-        <div class="map-actions">
-          <a href="/romnews/mappa.html" class="btn btn-primary">Apri Mappa Completa</a>
-          <p class="map-info">Esplora i monumenti, stadi e luoghi storici di Roma</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Upcoming Events Section -->
-  <section class="events-section">
-    <div class="container">
-      <div class="section-header centered">
-        <h2 class="section-title">Prossimi Eventi</h2>
-        <p class="section-subtitle">Non perdere queste date importanti</p>
-      </div>
-      
-      <div class="events-grid">
-        <div class="event-card">
-          <div class="event-date">
-            <span class="date-day">GEN</span>
-            <span class="date-number">28</span>
-          </div>
-          <div class="event-icon">
-            <i class="fas fa-futbol"></i>
-          </div>
-          <h3 class="event-title">Roma vs Juventus</h3>
-          <p class="event-details">Stadio Olimpico • 20:45</p>
-          <a href="/romnews/eventi.html" class="btn btn-tickets">Compra Biglietti</a>
-        </div>
-        
-        <div class="event-card">
-          <div class="event-date">
-            <span class="date-day">FEB</span>
-            <span class="date-number">03</span>
-          </div>
-          <div class="event-icon">
-            <i class="fas fa-trophy"></i>
-          </div>
-          <h3 class="event-title">Europa League Draw</h3>
-          <p class="event-details">Nyon, Svizzera • 13:00</p>
-          <a href="/romnews/eventi.html" class="btn btn-watch">Guarda Live</a>
-        </div>
-        
-        <div class="event-card">
-          <div class="event-date">
-            <span class="date-day">FEB</span>
-            <span class="date-number">10</span>
-          </div>
-          <div class="event-icon">
-            <i class="fas fa-users"></i>
-          </div>
-          <h3 class="event-title">Fan Meet & Greet</h3>
-          <p class="event-details">Centro Commerciale Roma Est • 16:00</p>
-          <a href="/romnews/eventi.html" class="btn btn-register">Registrati</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Video Highlights Section -->
-  <section class="videos-section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Video Highlights</h2>
-        <a href="/romnews/video.html" class="view-all">Vedi Tutti i Video</a>
-      </div>
-      
-      <div class="videos-grid">
-        <div class="video-card">
-          <div class="video-thumbnail">
-            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&h=300&fit=crop" alt="Migliori Gol">
-            <div class="play-button">
-              <i class="fas fa-play"></i>
-            </div>
-            <div class="video-overlay">
-              <h3 class="video-title">Migliori Gol della Stagione</h3>
-              <p class="video-description">Rivivi i momenti più emozionanti</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="video-card">
-          <div class="video-thumbnail">
-            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&h=300&fit=crop" alt="Dietro le Quinte">
-            <div class="play-button">
-              <i class="fas fa-play"></i>
-            </div>
-            <div class="video-overlay">
-              <h3 class="video-title">Dietro le Quinte</h3>
-              <p class="video-description">La vita quotidiana della squadra</p>
-            </div>
+            <div class="loading-icon">🗺️</div>
+            <div class="loading-text">Caricamento mappa...</div>
+            <div class="loading-subtext">Inizializzazione Mapbox</div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-content">
-        <div class="footer-column">
-          <div class="footer-brand">
-            <div class="brand-icon">
-              <i class="fas fa-shield-alt"></i>
-            </div>
-            <span class="brand-text">RomaNews</span>
-          </div>
-          <p class="footer-description">La tua fonte definitiva per notizie e aggiornamenti sui Romanisti</p>
+        <div class="footer-section">
+          <h4>ROMNEWS</h4>
+          <p>Portale per tifosi giallorossi.</p>
         </div>
-        
-        <div class="footer-column">
-          <h4 class="footer-title">Link Rapidi</h4>
-          <ul class="footer-links">
-            <li><a href="/romnews/">Ultime Notizie</a></li>
-            <li><a href="/romnews/eventi.html">Calendario Partite</a></li>
-            <li><a href="/romnews/">Statistiche Giocatori</a></li>
-            <li><a href="/romnews/eventi.html">Biglietti</a></li>
+        <div class="footer-section">
+          <h4>Link Utili</h4>
+          <ul>
+            <li><a href="../">Home</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="eventi.html">Eventi</a></li>
           </ul>
         </div>
-        
-        <div class="footer-column">
-          <h4 class="footer-title">Seguici</h4>
-          <div class="social-links">
-            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
-          </div>
+        <div class="footer-section">
+          <h4>Contatti</h4>
+          <p>© 2025 ROMNEWS</p>
         </div>
-        
-        <div class="footer-column">
-          <h4 class="footer-title">Newsletter</h4>
-          <p class="footer-description">Ricevi gli ultimi aggiornamenti Roma</p>
-          <div class="newsletter-form">
-            <input type="email" placeholder="La tua email" class="newsletter-input">
-            <button class="newsletter-btn">
-              <i class="fas fa-arrow-right"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-      
-      <div class="footer-bottom">
-        <p>&copy; 2025 RomaNews. Tutti i diritti riservati.</p>
       </div>
     </div>
   </footer>

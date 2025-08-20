@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Sidebar Roma</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* Roma Colors - Official AS Roma Colors */
+    :root {
+      --roma-red: #DC143C;
+      --roma-orange: #FF4500;
+      --roma-yellow: #FFD700;
+      --white: #ffffff;
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+    }
+
+    /* Sidebar Styles */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 280px;
+      height: 100vh;
+      background: linear-gradient(180deg, var(--roma-red) 0%, var(--roma-orange) 50%, var(--roma-yellow) 100%);
+      z-index: 999;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+      overflow-y: auto;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .sidebar.open {
+      transform: translateX(0);
+    }
+
+    .sidebar-header {
+      padding: 30px 20px;
+      text-align: center;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .sidebar-logo {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 15px;
+      background: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .sidebar-logo img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+    }
+
+    .sidebar-title {
+      color: var(--white);
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 5px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .sidebar-subtitle {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    .sidebar-nav {
+      padding: 20px 0;
+    }
+
+    .sidebar-nav-item {
+      display: block;
+      padding: 15px 25px;
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      border-left: 4px solid transparent;
+    }
+
+    .sidebar-nav-item:hover,
+    .sidebar-nav-item.active {
+      background: rgba(255, 255, 255, 0.1);
+      border-left-color: var(--white);
+      transform: translateX(5px);
+    }
+
+    .sidebar-nav-item i {
+      margin-right: 12px;
+      width: 20px;
+      text-align: center;
+    }
+
+    .sidebar-toggle {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1001;
+      background: var(--roma-red);
+      color: var(--white);
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: var(--shadow-lg);
+      transition: all 0.2s ease;
+    }
+
+    .sidebar-toggle:hover {
+      background: var(--roma-orange);
+      transform: scale(1.1);
+    }
+
+    .sidebar-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 998;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .sidebar-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Test content */
+    .test-content {
+      margin-left: 80px;
+      padding: 20px;
+    }
+
+    .test-content h1 {
+      color: var(--roma-red);
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar Toggle Button -->
+  <button class="sidebar-toggle" id="sidebarToggle">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <!-- Sidebar Overlay -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f7/AS_Roma_logo_%282017%29.svg/1200px-AS_Roma_logo_%282017%29.svg.png" alt="AS Roma Logo" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><circle cx=\'50\' cy=\'50\' r=\'45\' fill=\'%23DC143C\' stroke=\'%23FFD700\' stroke-width=\'3\'/><text x=\'50\' y=\'60\' text-anchor=\'middle\' fill=\'%23FFD700\' font-size=\'40\' font-weight=\'bold\'>R</text></svg>'">
+      </div>
+      <h2 class="sidebar-title">FORZA ROMA</h2>
+      <p class="sidebar-subtitle">Ovunque Romanisti</p>
+    </div>
+    
+    <nav class="sidebar-nav">
+      <a href="#" class="sidebar-nav-item active">
+        <i class="fas fa-home"></i>
+        Home
+      </a>
+      <a href="#" class="sidebar-nav-item">
+        <i class="fas fa-newspaper"></i>
+        News
+      </a>
+      <a href="#" class="sidebar-nav-item">
+        <i class="fas fa-calendar-alt"></i>
+        Eventi
+      </a>
+      <a href="#" class="sidebar-nav-item">
+        <i class="fas fa-play-circle"></i>
+        Video
+      </a>
+      <a href="#" class="sidebar-nav-item">
+        <i class="fas fa-map-marked-alt"></i>
+        Mappa
+      </a>
+    </nav>
+  </aside>
+
+  <!-- Test Content -->
+  <div class="test-content">
+    <h1>Test Sidebar Roma</h1>
+    <p>Dovresti vedere un pulsante rosso circolare in alto a sinistra con l'icona hamburger.</p>
+    <p>Cliccalo per aprire la sidebar con i colori ufficiali della Roma!</p>
+    <p>Colori: Rosso (#DC143C), Arancione (#FF4500), Giallo (#FFD700)</p>
+  </div>
+
+  <script>
+    // Sidebar functionality
+    function initSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      const sidebarToggle = document.getElementById('sidebarToggle');
+      const sidebarOverlay = document.getElementById('sidebarOverlay');
+      
+      if (!sidebar || !sidebarToggle || !sidebarOverlay) {
+        console.log('⚠️ Sidebar elements not found');
+        return;
+      }
+      
+      console.log('✅ Sidebar elements found, setting up...');
+      
+      // Toggle sidebar
+      sidebarToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+        sidebarOverlay.classList.toggle('open');
+        console.log('🚪 Sidebar toggled');
+      });
+      
+      // Close sidebar when clicking overlay
+      sidebarOverlay.addEventListener('click', () => {
+        sidebar.classList.remove('open');
+        sidebarOverlay.classList.remove('open');
+        console.log('🚪 Sidebar closed via overlay');
+      });
+      
+      // Close sidebar when pressing Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && sidebar.classList.contains('open')) {
+          sidebar.classList.remove('open');
+          sidebarOverlay.classList.remove('open');
+          console.log('🚪 Sidebar closed via Escape key');
+        }
+      });
+      
+      console.log('✅ Sidebar functionality initialized');
+    }
+
+    // Initialize when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initSidebar);
+    } else {
+      initSidebar();
+    }
+  </script>
+</body>
+</html>

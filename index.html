@@ -17,10 +17,56 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="styles.css?v=20250105">
-  <script defer src="script.js?v=20250105"></script>
+  <link rel="stylesheet" href="styles.css?v=20250105_sidebar">
+  <script defer src="script.js?v=20250105_sidebar"></script>
 </head>
 <body>
+  <!-- Sidebar Toggle Button -->
+  <button class="sidebar-toggle" id="sidebarToggle">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <!-- Sidebar Overlay -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f7/AS_Roma_logo_%282017%29.svg/1200px-AS_Roma_logo_%282017%29.svg.png" alt="AS Roma Logo" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><circle cx=\'50\' cy=\'50\' r=\'45\' fill=\'%23DC143C\' stroke=\'%23FFD700\' stroke-width=\'3\'/><text x=\'50\' y=\'60\' text-anchor=\'middle\' fill=\'%23FFD700\' font-size=\'40\' font-weight=\'bold\'>R</text></svg>'">
+      </div>
+      <h2 class="sidebar-title">FORZA ROMA</h2>
+      <p class="sidebar-subtitle">Ovunque Romanisti</p>
+    </div>
+    
+    <nav class="sidebar-nav">
+      <a href="/" class="sidebar-nav-item active">
+        <i class="fas fa-home"></i>
+        Home
+      </a>
+      <a href="/romnews/" class="sidebar-nav-item">
+        <i class="fas fa-newspaper"></i>
+        News
+      </a>
+      <a href="/romnews/eventi.html" class="sidebar-nav-item">
+        <i class="fas fa-calendar-alt"></i>
+        Eventi
+      </a>
+      <a href="/romnews/video.html" class="sidebar-nav-item">
+        <i class="fas fa-play-circle"></i>
+        Video
+      </a>
+      <a href="/romnews/mappa.html" class="sidebar-nav-item">
+        <i class="fas fa-map-marked-alt"></i>
+        Mappa
+      </a>
+      <a href="/news.html" class="sidebar-nav-item">
+        <i class="fas fa-rss"></i>
+        RSS Feed
+      </a>
+    </nav>
+  </aside>
+
   <!-- Header -->
   <header class="site-header">
     <div class="header-inner">
