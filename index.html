@@ -1,14 +1,115 @@
-<section class="home-map">
-  <div class="container">
-    <div class="map-embed" role="region" aria-label="Mappa di Roma">
-      <!-- Centered on Stadio Olimpico, zoom 13 -->
-      <iframe
-        class="map-iframe"
-        src="https://maps.google.com/maps?q=Stadio%20Olimpico%2C%20Roma&z=13&output=embed"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        allowfullscreen
-      ></iframe>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ovunque Romanisti — Home</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css?v=20250103"/>
+  
+  <!-- Mapbox -->
+  <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css">
+  <script defer src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+  <script defer src="script.js?v=20250103"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <div class="brand">Ovunque Romanisti</div>
+        <nav class="nav">
+          <a href="/romnews/">ROMNEWS</a>
+          <a href="/romnews/news.html">News</a>
+          <a href="/romnews/eventi.html">Eventi</a>
+          <a href="/romnews/video.html">Video</a>
+          <a href="/romnews/mappa.html">Mappa</a>
+        </nav>
+      </div>
     </div>
-  </div>
-</section>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>Benvenuto su Ovunque Romanisti</h1>
+        <p>Portale rapido con ROMNEWS, mappa e contenuti per tifosi giallorossi.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="/romnews/">Apri ROMNEWS</a>
+          <a class="btn btn-ghost" href="#map-widget">Vai alla Mappa</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content Sections -->
+    <section class="container">
+      <div class="grid">
+        <div class="card">
+          <h3>News</h3>
+          <p>Ultime notizie e approfondimenti sulla Roma.</p>
+          <a href="/romnews/news.html" class="btn btn-ghost">Vai alle News</a>
+        </div>
+        <div class="card">
+          <h3>Eventi</h3>
+          <p>Calendario match e appuntamenti giallorossi.</p>
+          <a href="/romnews/eventi.html" class="btn btn-ghost">Prossimi Eventi</a>
+        </div>
+        <div class="card">
+          <h3>Video</h3>
+          <p>Highlights e interviste della squadra.</p>
+          <a href="/romnews/video.html" class="btn btn-ghost">Guarda i Video</a>
+        </div>
+        <div class="card">
+          <h3>Mappa</h3>
+          <p>Apri la mappa completa di Roma.</p>
+          <a href="/romnews/mappa.html" class="btn btn-ghost">Apri Mappa</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="home-map">
+      <div class="container">
+        <h2 class="page-title">Mappa (preview)</h2>
+        <div id="map-widget" class="mapbox-container" role="region" aria-label="Mappa di Roma">
+          <div class="map-loading">
+            <div class="loading-icon">🗺️</div>
+            <div class="loading-text">Caricamento mappa...</div>
+            <div class="loading-subtext">Inizializzazione Mapbox</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Ovunque Romanisti</h4>
+          <p>Portale per tifosi giallorossi sparsi nel mondo.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Link Utili</h4>
+          <ul>
+            <li><a href="/romnews/">ROMNEWS</a></li>
+            <li><a href="/romnews/news.html">News</a></li>
+            <li><a href="/romnews/eventi.html">Eventi</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contatti</h4>
+          <p>© 2025 Ovunque Romanisti</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

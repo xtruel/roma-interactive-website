@@ -6,7 +6,11 @@
   <title>Mappa • RomaNews</title>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=202501"/>
+  <link rel="stylesheet" href="styles.css?v=20250103"/>
+  <!-- Mapbox GL CSS/JS -->
+  <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css">
+  <script defer src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+  <script defer src="../script.js?v=20250103"></script>
 </head>
 <body>
 <header class="site-header">
@@ -33,7 +37,17 @@
 
   <section class="news-section">
     <div class="container">
-      <p>Qui potrai integrare una mappa interattiva (Mapbox/Leaflet). Per ora, pagina placeholder.</p>
+      <div class="map-full-container">
+        <h2>Mappa Interattiva Completa</h2>
+        <p>Esplora Roma con la mappa interattiva Mapbox. Clicca sui marker per informazioni sui luoghi.</p>
+        <div id="map-widget" class="mapbox-container map-full" role="region" aria-label="Mappa completa di Roma">
+          <div class="map-loading">
+            <div class="loading-icon">🗺️</div>
+            <div class="loading-text">Caricamento mappa completa...</div>
+            <div class="loading-subtext">Inizializzazione Mapbox</div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </main>

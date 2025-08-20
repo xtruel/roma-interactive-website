@@ -84,3 +84,16 @@ a { color: inherit; text-decoration: none; }
   .header-inner { gap: 8px; }
   .nav a { margin-left: 12px; }
 }
+
+body.fullmap { margin: 0; background: var(--surface); overflow: hidden; }
+#map { position: fixed; inset: 0; width: 100%; height: 100%; }
+/* Mapbox preview container on ROMNEWS home */
+.mapbox-container,
+#map-widget{
+  position: relative;
+  width: 100%;
+  height: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}

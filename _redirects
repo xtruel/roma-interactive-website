@@ -1,9 +1,13 @@
+# Old domain redirects to new domain
 https://romanistiovunque.it/* https://ovunqueromanisti.it/:splat 301!
 http://romanistiovunque.it/* https://ovunqueromanisti.it/:splat 301!
 https://www.romanistiovunque.it/* https://ovunqueromanisti.it/:splat 301!
 http://www.romanistiovunque.it/* https://ovunqueromanisti.it/:splat 301!
 
-# Force new domain variants to HTTPS apex
+# Force HTTPS
 http://ovunqueromanisti.it/* https://ovunqueromanisti.it/:splat 301!
-https://www.ovunqueromanisti.it/* https://ovunqueromanisti.it/:splat 301!
 http://www.ovunqueromanisti.it/* https://ovunqueromanisti.it/:splat 301!
+
+# ROMNEWS section redirects (keep existing romnews folder accessible)
+/romnews /romnews/ 301!
+/romnews/index.html /romnews/ 301!

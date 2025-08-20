@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ROMNEWS · Video</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <script>
+    if (location.protocol === 'http:') {
+      location.replace('https://' + location.host + location.pathname + location.search + location.hash);
+    }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/romnews/">ROMNEWS</a>
+      <nav class="nav">
+        <a href="/romnews/news.html">News</a>
+        <a href="/romnews/eventi.html">Eventi</a>
+        <a class="active" href="/romnews/video.html">Video</a>
+        <a href="/romnews/mappa.html">Mappa</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Video</h1>
+    <p>Highlights e interviste.</p>
+
+    <div class="grid" style="gap:24px">
+      <div class="card">
+        <h3>Highlight 1</h3>
+        <div class="media" style="position:relative;padding-top:56.25%;border-radius:8px;overflow:hidden;background:#000">
+          <iframe
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            title="Video 1"
+            style="position:absolute;inset:0;width:100%;height:100%;border:0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Intervista 2</h3>
+        <div class="media" style="position:relative;padding-top:56.25%;border-radius:8px;overflow:hidden;background:#000">
+          <iframe
+            src="https://www.youtube.com/embed/oHg5SJYRHA0"
+            title="Video 2"
+            style="position:absolute;inset:0;width:100%;height:100%;border:0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 ROMNEWS · Ovunque Romanisti</p>
+    </div>
+  </footer>
+</body>
+</html>
