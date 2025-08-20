@@ -1,59 +1,152 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mappa • RomaNews</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20250103"/>
-  <!-- Mapbox GL CSS/JS -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mappa Interattiva di Roma - RomaNews</title>
+  <meta name="description" content="Esplora la mappa interattiva di Roma con monumenti, stadi e luoghi storici">
+  <link rel="canonical" href="https://www.ovunqueromanisti.it/romnews/mappa.html">
+  
+  <!-- Mapbox CSS and JS -->
   <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css">
   <script defer src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../styles.css?v=20250105">
   <script defer src="../script.js?v=20250105"></script>
 </head>
 <body>
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="brand"><span class="brand-dot"></span><span class="brand-name">RomaNews</span></div>
-    <nav class="main-nav">
-      <a href="index.html">Home</a>
-      <a href="news.html">News</a>
-      <a href="eventi.html">Eventi</a>
-      <a href="video.html">Video</a>
-      <a href="mappa.html" class="active">Mappa</a>
-    </nav>
-    <button class="icon-button" aria-label="Search">🔍</button>
-  </div>
-</header>
-
-<main>
-  <section class="page-header">
-    <div class="container">
-      <h1>Mappa di Roma</h1>
-      <p>Luoghi storici, punti di interesse e itinerari romanisti</p>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="brand-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <span class="brand-text">RomaNews</span>
+      </div>
+      
+      <nav class="nav">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/romnews/" class="nav-link">News</a>
+        <a href="/romnews/eventi.html" class="nav-link">Eventi</a>
+        <a href="/romnews/video.html" class="nav-link">Video</a>
+        <a href="/romnews/mappa.html" class="nav-link active">Mappa</a>
+      </nav>
+      
+      <div class="search-icon">
+        <i class="fas fa-search"></i>
+      </div>
     </div>
-  </section>
+  </header>
 
-  <section class="news-section">
+  <!-- Map Full Page Section -->
+  <section class="map-full-container">
     <div class="container">
-      <div class="map-full-container">
-        <h2>Mappa Interattiva Completa</h2>
-        <p>Esplora Roma con la mappa interattiva Mapbox. Clicca sui marker per informazioni sui luoghi.</p>
-        <div id="map" class="mapbox-container map-full" role="region" aria-label="Mappa completa di Roma">
-          <div class="map-loading">
-            <div class="loading-icon">🗺️</div>
-            <div class="loading-text">Caricamento mappa completa...</div>
-            <div class="loading-subtext">Inizializzazione Mapbox</div>
+      <div class="section-header centered">
+        <h1 class="section-title">Mappa Interattiva di Roma</h1>
+        <p class="section-subtitle">Esplora i monumenti, stadi e luoghi storici della città eterna</p>
+      </div>
+      
+      <div id="map" class="mapbox-container map-full">
+        <div class="map-loading">
+          <div class="loading-icon">
+            <i class="fas fa-map-marked-alt"></i>
           </div>
+          <div class="loading-text">Caricamento Mappa Completa...</div>
+          <div class="loading-subtext">Preparazione della mappa interattiva di Roma con tutti i punti di interesse</div>
+        </div>
+      </div>
+      
+      <div class="map-info-section">
+        <div class="map-features">
+          <div class="feature-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Monumenti Storici</span>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-futbol"></i>
+            <span>Stadi e Palazzetti</span>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-utensils"></i>
+            <span>Ristoranti Tipici</span>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-hotel"></i>
+            <span>Hotel e Alloggi</span>
+          </div>
+        </div>
+        
+        <div class="map-actions">
+          <a href="/romnews/" class="btn btn-primary">
+            <i class="fas fa-arrow-left"></i>
+            Torna alle News
+          </a>
+          <a href="/" class="btn btn-secondary">
+            <i class="fas fa-home"></i>
+            Homepage
+          </a>
         </div>
       </div>
     </div>
   </section>
-</main>
 
-<footer class="site-footer">
-  <div class="container"><div class="footer-bottom">© 2024 RomaNews. Tutti i diritti riservati.</div></div>
-</footer>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <div class="footer-brand">
+            <div class="brand-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <span class="brand-text">RomaNews</span>
+          </div>
+          <p class="footer-description">La tua fonte definitiva per notizie e aggiornamenti sui Romanisti</p>
+        </div>
+        
+        <div class="footer-column">
+          <h4 class="footer-title">Link Rapidi</h4>
+          <ul class="footer-links">
+            <li><a href="/romnews/">Ultime Notizie</a></li>
+            <li><a href="/romnews/eventi.html">Calendario Partite</a></li>
+            <li><a href="/romnews/">Statistiche Giocatori</a></li>
+            <li><a href="/romnews/eventi.html">Biglietti</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h4 class="footer-title">Seguici</h4>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h4 class="footer-title">Newsletter</h4>
+          <p class="footer-description">Ricevi gli ultimi aggiornamenti Roma</p>
+          <div class="newsletter-form">
+            <input type="email" placeholder="La tua email" class="newsletter-input">
+            <button class="newsletter-btn">
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 RomaNews. Tutti i diritti riservati.</p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
