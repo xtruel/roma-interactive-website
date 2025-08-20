@@ -8,6 +8,6 @@ http://www.romanistiovunque.it/* https://ovunqueromanisti.it/:splat 301!
 http://ovunqueromanisti.it/* https://ovunqueromanisti.it/:splat 301!
 http://www.ovunqueromanisti.it/* https://ovunqueromanisti.it/:splat 301!
 
-# ROMNEWS section redirects (keep existing romnews folder accessible)
-/romnews /romnews/ 301!
-/romnews/index.html /romnews/ 301!
+# Note: Removed problematic ROMNEWS redirect that was causing infinite loop
+# /romnews /romnews/ 301!
+# /romnews/index.html /romnews/ 301!

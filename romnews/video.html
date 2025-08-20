@@ -1,67 +1,201 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ROMNEWS · Video</title>
-  <link rel="stylesheet" href="styles.css"/>
-  <script>
-    if (location.protocol === 'http:') {
-      location.replace('https://' + location.host + location.pathname + location.search + location.hash);
-    }
-  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video - RomaNews</title>
+  <meta name="description" content="Video highlights, interviste e documentari sulla Roma e il calcio giallorosso">
+  <link rel="canonical" href="https://www.ovunqueromanisti.it/romnews/video.html">
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../styles.css?v=20250105">
 </head>
 <body>
+  <!-- Header -->
   <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="/romnews/">ROMNEWS</a>
+    <div class="header-inner">
+      <div class="brand">
+        <div class="brand-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <span class="brand-text">RomaNews</span>
+      </div>
+      
       <nav class="nav">
-        <a href="/romnews/news.html">News</a>
-        <a href="/romnews/eventi.html">Eventi</a>
-        <a class="active" href="/romnews/video.html">Video</a>
-        <a href="/romnews/mappa.html">Mappa</a>
+        <a href="/" class="nav-link">Home</a>
+        <a href="/romnews/" class="nav-link">News</a>
+        <a href="/romnews/eventi.html" class="nav-link">Eventi</a>
+        <a href="/romnews/video.html" class="nav-link active">Video</a>
+        <a href="/romnews/mappa.html" class="nav-link">Mappa</a>
       </nav>
+      
+      <div class="search-icon">
+        <i class="fas fa-search"></i>
+      </div>
     </div>
   </header>
 
-  <main class="container">
-    <h1>Video</h1>
-    <p>Highlights e interviste.</p>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">VIDEO HIGHLIGHTS</h1>
+      <p class="hero-subtitle">Rivivi i momenti più emozionanti della Roma e scopri la storia del calcio giallorosso</p>
+      <div class="hero-actions">
+        <a href="/romnews/" class="btn btn-primary">Torna alle News</a>
+        <a href="/" class="btn btn-secondary">Homepage</a>
+      </div>
+    </div>
+  </section>
 
-    <div class="grid" style="gap:24px">
-      <div class="card">
-        <h3>Highlight 1</h3>
-        <div class="media" style="position:relative;padding-top:56.25%;border-radius:8px;overflow:hidden;background:#000">
+  <!-- Featured Video Section -->
+  <section class="featured-video">
+    <div class="container">
+      <div class="section-header centered">
+        <h2 class="section-title">Documentario Roma</h2>
+        <p class="section-subtitle">La storia del calcio e del coro classico della Roma</p>
+      </div>
+      
+      <div class="featured-video-container">
+        <div class="video-player">
           <iframe
             src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-            title="Video 1"
-            style="position:absolute;inset:0;width:100%;height:100%;border:0"
+            title="Documentario Roma - Storia del Calcio e Coro Classico"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen
             loading="lazy"
           ></iframe>
         </div>
-      </div>
-
-      <div class="card">
-        <h3>Intervista 2</h3>
-        <div class="media" style="position:relative;padding-top:56.25%;border-radius:8px;overflow:hidden;background:#000">
-          <iframe
-            src="https://www.youtube.com/embed/oHg5SJYRHA0"
-            title="Video 2"
-            style="position:absolute;inset:0;width:100%;height:100%;border:0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-            loading="lazy"
-          ></iframe>
+        <div class="video-info">
+          <h3 class="video-title">Documentario Roma: Storia del Calcio e Coro Classico</h3>
+          <p class="video-description">Un viaggio emozionante attraverso la storia della Roma, dal calcio ai cori classici che hanno reso famosa la squadra giallorossa in tutto il mondo. Scopri le tradizioni, le vittorie e la passione che animano i tifosi della capitale.</p>
+          <div class="video-meta">
+            <span class="video-duration"><i class="fas fa-clock"></i> 45 min</span>
+            <span class="video-category"><i class="fas fa-futbol"></i> Documentario</span>
+            <span class="video-views"><i class="fas fa-eye"></i> 125K visualizzazioni</span>
+          </div>
         </div>
       </div>
     </div>
-  </main>
+  </section>
 
+  <!-- Video Grid Section -->
+  <section class="videos-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Altri Video</h2>
+        <a href="#" class="view-all">Vedi Tutti i Video</a>
+      </div>
+      
+      <div class="videos-grid">
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&h=300&fit=crop" alt="Migliori Gol">
+            <div class="play-button">
+              <i class="fas fa-play"></i>
+            </div>
+            <div class="video-overlay">
+              <h3 class="video-title">Migliori Gol della Stagione</h3>
+              <p class="video-description">Rivivi i momenti più emozionanti</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&h=300&fit=crop" alt="Dietro le Quinte">
+            <div class="play-button">
+              <i class="fas fa-play"></i>
+            </div>
+            <div class="video-overlay">
+              <h3 class="video-title">Dietro le Quinte</h3>
+              <p class="video-description">La vita quotidiana della squadra</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&h=300&fit=crop" alt="Coro Classico Roma">
+            <div class="play-button">
+              <i class="fas fa-play"></i>
+            </div>
+            <div class="video-overlay">
+              <h3 class="video-title">Coro Classico Roma</h3>
+              <p class="video-description">I canti storici della Curva Sud</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&h=300&fit=crop" alt="Storia della Roma">
+            <div class="play-button">
+              <i class="fas fa-play"></i>
+            </div>
+            <div class="video-overlay">
+              <h3 class="video-title">Storia della Roma</h3>
+              <p class="video-description">Dal 1927 ai giorni nostri</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
-      <p>© 2025 ROMNEWS · Ovunque Romanisti</p>
+      <div class="footer-content">
+        <div class="footer-column">
+          <div class="footer-brand">
+            <div class="brand-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <span class="brand-text">RomaNews</span>
+          </div>
+          <p class="footer-description">La tua fonte definitiva per notizie e aggiornamenti sui Romanisti</p>
+        </div>
+        
+        <div class="footer-column">
+          <h4 class="footer-title">Link Rapidi</h4>
+          <ul class="footer-links">
+            <li><a href="/romnews/">Ultime Notizie</a></li>
+            <li><a href="/romnews/eventi.html">Calendario Partite</a></li>
+            <li><a href="/romnews/">Statistiche Giocatori</a></li>
+            <li><a href="/romnews/eventi.html">Biglietti</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h4 class="footer-title">Seguici</h4>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h4 class="footer-title">Newsletter</h4>
+          <p class="footer-description">Ricevi gli ultimi aggiornamenti Roma</p>
+          <div class="newsletter-form">
+            <input type="email" placeholder="La tua email" class="newsletter-input">
+            <button class="newsletter-btn">
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 RomaNews. Tutti i diritti riservati.</p>
+      </div>
     </div>
   </footer>
 </body>
