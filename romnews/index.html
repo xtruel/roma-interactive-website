@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ROMNEWS · Home</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/romnews/">ROMNEWS</a>
+      <nav class="nav">
+        <a href="/romnews/news.html">News</a>
+        <a href="/romnews/eventi.html">Eventi</a>
+        <a href="/romnews/video.html">Video</a>
+        <a href="/romnews/mappa.html">Mappa</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Benvenuto su ROMNEWS</h1>
+        <p>Notizie, eventi, video e una mappa rapida sulla Roma.</p>
+        <div class="actions">
+          <a class="btn primary" href="/romnews/news.html">Vai alle News</a>
+          <a class="btn" href="/romnews/eventi.html">Prossimi Eventi</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="quick-nav container">
+      <div class="grid" style="margin:24px 0">
+        <a class="card" href="/romnews/news.html">
+          <h3>News</h3>
+          <p>Ultime notizie e approfondimenti.</p>
+        </a>
+        <a class="card" href="/romnews/eventi.html">
+          <h3>Eventi</h3>
+          <p>Calendario match e appuntamenti.</p>
+        </a>
+        <a class="card" href="/romnews/video.html">
+          <h3>Video</h3>
+          <p>Highlights e interviste.</p>
+        </a>
+        <a class="card" href="/romnews/mappa.html">
+          <h3>Mappa</h3>
+          <p>Apri la mappa completa.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="home-map">
+      <div class="container">
+        <h2 class="page-title">Mappa (preview)</h2>
+        <div class="map-embed" role="region" aria-label="Mappa Stadio Olimpico">
+          <iframe
+            class="map-iframe"
+            src="https://maps.google.com/maps?q=Stadio%20Olimpico%2C%20Roma&z=13&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 ROMNEWS · Ovunque Romanisti</p>
+    </div>
+  </footer>
+</body>
+</html>
